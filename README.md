@@ -1,0 +1,1 @@
+The World of books site is a test version.
