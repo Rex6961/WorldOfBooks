@@ -8,7 +8,7 @@
   <p><strong>Язык:</strong> {{book.language}}</p>
     {% for author in book.author.all %}
       <p><strong>Автор:</strong>
-          <a href="{{author.id}}">{{author.first_name}} {{author.last_name}}</a></p>
+          <a href="{% url 'author-detail' author.id %}">{{author.first_name}} {{author.last_name}}</a></p>
     {% endfor %}
   <div style="margin-left: 20px;margin-top: 20px">
     <h4>Количество экземпляров книг в БД</h4>

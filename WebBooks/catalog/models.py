@@ -34,8 +34,14 @@ class Author(models.Model):
                                      verbose_name="Дата смерти",
                                      null=True, blank=True)
 
+    class Meta:
+        ordering = ['last_name']
+
     def __str__(self):
         return self.last_name
+
+    def duration(self):
+        return self.date_of_death.year - self.date_of_birth.year
 
 
 class Book(models.Model):
@@ -57,6 +63,9 @@ class Book(models.Model):
     isbn = models.CharField(max_length=13,
                             help_text="Должно содержать 13 символов",
                             verbose_name="ISBN книги")
+
+    class Meta:
+        ordering = ['title']
 
     def __str__(self):
         return self.title
